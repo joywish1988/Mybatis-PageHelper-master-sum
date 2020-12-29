@@ -82,6 +82,8 @@ public class PageAutoDialect {
         registerDialectAlias("edb", OracleDialect.class);
         //神通数据库
         registerDialectAlias("oscar", MySqlDialect.class);
+        //人大金仓数据库
+        registerDialectAlias("kingbase8", HsqldbDialect.class);
     }
 
     //自动获取dialect,如果没有setProperties或setSqlUtilConfig，也可以正常进行

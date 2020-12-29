@@ -115,10 +115,14 @@ public abstract class PageMethod {
     
     /**
      * 开始分页
-     *
-     * @param pageNum  页码
-     * @param pageSize 每页显示数量
-     * @param count    是否进行count查询
+     *   
+     * @param <E>
+     * @param pageNum	页码
+     * @param pageSize	每页显示数量
+     * @param count		是否进行count查询
+     * @param sum		是否启用sum求和
+     * @param sumParam	sum求和参数
+     * @return
      */
     public static <E> Page<E> startPage(int pageNum, int pageSize, boolean count, boolean sum, String sumParam) {
         return startPage(pageNum, pageSize, count, sum, sumParam, null, null);
@@ -143,6 +147,8 @@ public abstract class PageMethod {
      * @param pageNum      页码
      * @param pageSize     每页显示数量
      * @param count        是否进行count查询
+     * @param sum          是否进行sum求和
+     * @param sumParam     sum求和选择参数
      * @param reasonable   分页合理化,null时用默认配置
      * @param pageSizeZero true且pageSize=0时返回全部结果，false时分页,null时用默认配置
      */
